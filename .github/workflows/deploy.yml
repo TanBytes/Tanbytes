@@ -18,7 +18,7 @@ jobs:
 
       - name: Deploy to Hostinger
         env:
-          HOSTINGER_FTP_HOST: ftp://glimpseven.com
+          HOSTINGER_FTP_HOST: ftp://tanbytes.com
           HOSTINGER_FTP_USERNAME: u256109075.tanbytes.com
           HOSTINGER_FTP_PASSWORD: Tan2024Bytes
         run: set ssl:verify-certificate no
