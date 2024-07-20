@@ -18,6 +18,7 @@ jobs:
 
       - name: Deploy to Hostinger
         run: bash ./deploy.sh
+             set ssl:verify-certificate no
         env:
           HOSTINGER_FTP_HOST: ftp.tanbytes.com	
           HOSTINGER_FTP_USERNAME: u256109075.ashok
