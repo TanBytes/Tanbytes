@@ -1,0 +1,21 @@
+name: CI/CD Pipeline
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v2
+
+      - name: Deploy to Hostinger
+        run: bash ./deploy.sh
+        env:
+          HOSTINGER_FTP_HOST: ftp.tanbytes.com	
+          HOSTINGER_FTP_USERNAME: u256109075.ashok
+          HOSTINGER_FTP_PASSWORD: Tan2024Bytes
