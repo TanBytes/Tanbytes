@@ -18,7 +18,7 @@ jobs:
 
       - name: Deploy to Hostinger
         env:
-          HOSTINGER_FTP_HOST: ftp.tanbytes.com	
+          HOSTINGER_FTP_HOST: ftp.tanbytes.com
           HOSTINGER_FTP_USERNAME: u256109075.ashok
           HOSTINGER_FTP_PASSWORD: Tan2024Bytes
         run: bash ./deploy.sh
