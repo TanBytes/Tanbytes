@@ -9,9 +9,14 @@ PASS=$HOSTINGER_FTP_PASSWORD
 LOCAL_DIR="."
 REMOTE_DIR="/public_html/"
 
-# Upload Files
+# Get list of staged files
+STAGED_FILES=$(git diff --name-only --cached)
+
+# Upload Staged Files
 lftp -u $USER,$PASS $HOST <<EOF
 set ssl:verify-certificate no
-mirror --reverse --delete --verbose --exclude-glob .git* $LOCAL_DIR $REMOTE_DIR
+$(for file in $STAGED_FILES; do
+  echo "put -O $REMOTE_DIR $LOCAL_DIR/$file"
+done)
 bye
-"
+EOF
